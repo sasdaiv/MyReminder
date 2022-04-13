@@ -11,6 +11,8 @@
             <div class="alert alert-warning mt-2">
                 <h3>{{ element.title }}</h3>
                 <p>{{ element.task }}</p>
+                <a href="{% url 'delete' element.id %}" class="btn btn-warning">Читати детальніше</a>
+
             </div>
         {% endfor %}
     {% else %}
