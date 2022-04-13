@@ -1,0 +1,18 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Підтвердження виконання завдання{% endblock %}
+
+{% block content %}
+    <div class="features">
+        <center><h2>Ви точно завершили дане завдання? :</h2><br></center>
+        <form method="post">
+            <center>
+                {% csrf_token %}
+                <h1>{{ task.title }}</h1>
+                <p>{{ task.task }}</p>
+                {# <input type="text" placeholder="Название статьи" class="form-control" name="title"> #}
+                <button class="btn btn-danger" type="submit">Завершити</button>
+            </center>
+        </form>
+    </div>
+{% endblock %}

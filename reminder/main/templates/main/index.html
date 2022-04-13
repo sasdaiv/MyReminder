@@ -5,13 +5,18 @@
 {% endblock %}
 
 {% block content %}
-    <h1>Що потрібно зробити:</h1><br>
+    <center>
+        <a class="btn btn-success" href="{% url 'create' %}">Додати завдання</a>
+        <br><br>
+        <h1>Що потрібно зробити:</h1><br>
+
+    </center>
     {% if tasks %}
         {% for element in tasks %}
             <div class="alert alert-warning mt-2">
                 <h3>{{ element.title }}</h3>
                 <p>{{ element.task }}</p>
-                <a href="{% url 'delete' element.id %}" class="btn btn-warning">Читати детальніше</a>
+                <a href="{% url 'delete' element.id %}" class="btn btn-warning">Завершити</a>
 
             </div>
         {% endfor %}
